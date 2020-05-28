@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "43325793713",
+    "firebase_url": "https://hasgarddetouro-app.firebaseio.com",
+    "project_id": "hasgarddetouro-app",
+    "storage_bucket": "hasgarddetouro-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43325793713:android:a620444b83fa6eb122c990",
+        "android_client_info": {
+          "package_name": "com.opet.hasgarddetouro_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43325793713-6pqpl4obc34te58bkd59vovfh8n52ro2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.opet.hasgarddetouro_app",
+            "certificate_hash": "fa8a5a5b17b8c6854998833fcc4b25ed21f73524"
+          }
+        },
+        {
+          "client_id": "43325793713-2cvnunpr6cvr1gv0ugockn529371a5f2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCppb64AFkwZCG0DgWpXk632D5nvAv5xsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43325793713-2cvnunpr6cvr1gv0ugockn529371a5f2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
