@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        String email = editLogin.getText().toString();
+        String login = editLogin.getText().toString();
         String passwd = editPass.getText().toString();
-        firebaseAuth.signInWithEmailAndPassword(email, passwd)
+        firebaseAuth.signInWithEmailAndPassword(login, passwd)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, "onComplete: Success");
                             FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                             updateUI(firebaseUser);
+                        } else {
+                            Log.wtf(TAG, "Falha ao autenticar usuário");
+                            Toast.makeText(MainActivity.this, "Falha ao autenticar", Toast.LENGTH_LONG).show();
+                            updateUI(null);
                         }
                     }
                 });
@@ -58,7 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser firebaseUser) {
         if (firebaseUser != null){
-            // To do
+            /**
+             * Organizar logica para logar e retornar para página que chamou o login
+             */
+            Toast.makeText(MainActivity.this, "Sucesso ao autenticar", Toast.LENGTH_LONG).show();
         }
     }
 
