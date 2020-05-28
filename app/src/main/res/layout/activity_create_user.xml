@@ -16,11 +16,13 @@
 
     <EditText
         android:id="@+id/newLogin"
+        android:inputType="textEmailAddress"
         android:hint="Digite E-mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/newPass"
+        android:inputType="textPassword"
         android:hint="Digite Senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
