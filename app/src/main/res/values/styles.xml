@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <string name="welcome_app">Seja Bem-vindo</string>
+    <string name="desc_image_welcome">desc image welcome</string>
+
 </resources>

@@ -15,10 +15,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.opet.hasgarddetouro_app.activities.CreateUserActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = HomeActivity.class.getSimpleName();
     private EditText editLogin, editPass;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         editLogin = findViewById(R.id.editLogin);
         editPass = findViewById(R.id.editPass);
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                             updateUI(firebaseUser);
                         } else {
                             Log.wtf(TAG, "Falha ao autenticar usuário");
-                            Toast.makeText(MainActivity.this, "Falha ao autenticar", Toast.LENGTH_LONG).show();
+                            Toast.makeText(HomeActivity.this, "Falha ao autenticar", Toast.LENGTH_LONG).show();
                             updateUI(null);
                         }
                     }
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             /**
              * Organizar logica para logar e retornar para página que chamou o login
              */
-            Toast.makeText(MainActivity.this, "Sucesso ao autenticar", Toast.LENGTH_LONG).show();
+            Toast.makeText(HomeActivity.this, "Sucesso ao autenticar", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void criarUsuario(View view) {
-        Intent paginaCriar = new Intent(MainActivity.this, CreateUserActivity.class);
+        Intent paginaCriar = new Intent(HomeActivity.this, CreateUserActivity.class);
         startActivity(paginaCriar);
         finish();
     }
