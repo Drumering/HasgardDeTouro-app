@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.opet.hasgarddetouro_app.HomeActivity;
 import com.opet.hasgarddetouro_app.R;
 
 public class CreateUserActivity extends AppCompatActivity {
@@ -63,7 +62,7 @@ public class CreateUserActivity extends AppCompatActivity {
     }
 
     public void voltar(View view) {
-        Intent home = new Intent(CreateUserActivity.this, HomeActivity.class);
+        Intent home = new Intent(CreateUserActivity.this, AuthenticationActivity.class);
         startActivity(home);
         finish();
     }

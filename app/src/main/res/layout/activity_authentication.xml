@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.AuthenticationActivity">
+
+    <TextView
+        android:textSize="20sp"
+        android:text="Autentique-se"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editLogin"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editPass"
+        android:inputType="textPassword"
+        android:hint="Senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:fontFamily="@font/roboto"
+        android:clickable="true"
+        android:onClick="criarUsuario"
+        android:text="Ainda não tem conta?\nCadastra-se"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/roboto"
+        android:onClick="login"
+        android:text="Entrar" />
+    <Button
+        android:layout_margin="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Entrar com conta Gmail"
+        android:onClick="loginGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

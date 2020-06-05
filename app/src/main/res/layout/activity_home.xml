@@ -1,47 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:textSize="20sp"
-        android:text="Autentique-se"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editLogin"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_margin="10sp"
+            android:id="@+id/imageFirstHighlight"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_bed_splash_foreground"/>
 
-    <EditText
-        android:id="@+id/editPass"
-        android:inputType="textPassword"
-        android:hint="Senha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            android:textSize="18sp" />
 
-    <TextView
-        android:clickable="true"
-        android:onClick="criarUsuario"
-        android:text="Ainda não tem conta?\nCadastra-se"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:text="12x de R$ 100.00,00"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageSecondHighlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10sp"
+            app:srcCompat="@mipmap/ic_bed_splash_foreground" />
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            android:textSize="18sp" />
+
+        <TextView
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:text="12x de R$ 100.00,00"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
     <Button
-        android:text="Entrar"
-        android:onClick="login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Entrar com conta Gmail"
-        android:onClick="loginGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@mipmap/ic_plus_flat_icon_foreground"
+        android:onClick="goToAuth"
+        android:scaleX="2"
+        android:scaleY="2" />
+
 </LinearLayout>
