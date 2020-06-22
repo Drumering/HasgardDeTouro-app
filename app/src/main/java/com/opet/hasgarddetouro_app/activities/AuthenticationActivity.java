@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.opet.hasgarddetouro_app.HomeActivity;
 import com.opet.hasgarddetouro_app.R;
 
 public class AuthenticationActivity extends AppCompatActivity {
@@ -38,14 +39,13 @@ public class AuthenticationActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         firebaseUser = firebaseAuth.getCurrentUser();
     }
 
     public void login(View view) {
         String login = editLogin.getText().toString();
-        String passwd = editPass.getText().toString();
-        firebaseAuth.signInWithEmailAndPassword(login, passwd)
+        String pass = editPass.getText().toString();
+        firebaseAuth.signInWithEmailAndPassword(login, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -64,10 +64,10 @@ public class AuthenticationActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser firebaseUser) {
         if (firebaseUser != null){
-            /**
-             * Organizar logica para logar e retornar para página que chamou o login
-             */
             Toast.makeText(AuthenticationActivity.this, "Sucesso ao autenticar", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(AuthenticationActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
