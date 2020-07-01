@@ -1,16 +1,22 @@
 package com.opet.hasgarddetouro_app.objects;
 
-public class Matress {
+import java.io.Serializable;
+import java.util.List;
+
+public class Matress implements Serializable {
     private String name;
     private String description;
     private Float cashPrice;
-    private String conditions;
+    private List<String> images;
 
-    public Matress(String name, String description, Float cashPrice, String conditions) {
+    public Matress() {
+    }
+
+    public Matress(String name, String description, Float cashPrice, List<String> images) {
         this.name = name;
         this.description = description;
         this.cashPrice = cashPrice;
-        this.conditions = conditions;
+        this.images = images;
     }
 
     public String getName() {
@@ -37,11 +43,11 @@ public class Matress {
         this.cashPrice = cashPrice;
     }
 
-    public String getConditions() {
-        return conditions;
+    public List<String> getImages() {
+        return images;
     }
 
-    public void setConditions(String conditions) {
-        this.conditions = conditions;
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 }
