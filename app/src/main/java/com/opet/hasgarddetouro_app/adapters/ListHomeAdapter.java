@@ -12,24 +12,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.opet.hasgarddetouro_app.R;
-import com.opet.hasgarddetouro_app.objects.Mattress;
+import com.opet.hasgarddetouro_app.objects.Matress;
 
 import java.util.ArrayList;
 
-public class ListHomeAdapter extends ArrayAdapter<Mattress> {
+public class ListHomeAdapter extends ArrayAdapter<Matress> {
 
-    private ArrayList<Mattress> mattresses;
+    private ArrayList<Matress> matresses;
     private Context mContext;
 
-    public ListHomeAdapter(@NonNull Context context, ArrayList<Mattress> mattresses) {
+    public ListHomeAdapter(@NonNull Context context, ArrayList<Matress> matresses) {
         super(context, R.layout.list_home);
         this.mContext = context;
-        this.mattresses = mattresses;
+        this.matresses = matresses;
     }
 
     @Override
     public int getCount() {
-        return mattresses.size();
+        return matresses.size();
     }
 
     @NonNull
@@ -43,10 +43,9 @@ public class ListHomeAdapter extends ArrayAdapter<Mattress> {
         TextView cond_matress = convertView.findViewById(R.id.cond_matress);
 
         imageView.setImageResource(R.mipmap.ic_bed_splash_foreground);
-        descMatress.setText(mattresses.get(position).getDescription());
-        cond_matress.setText(mattresses.get(position).getConditions());
+        descMatress.setText(matresses.get(position).getDescription());
+        cond_matress.setText(matresses.get(position).getConditions());
 
         return convertView;
     }
-
 }

@@ -9,13 +9,13 @@ import android.widget.ListView;
 
 import com.opet.hasgarddetouro_app.activities.AuthenticationActivity;
 import com.opet.hasgarddetouro_app.adapters.ListHomeAdapter;
-import com.opet.hasgarddetouro_app.objects.Mattress;
+import com.opet.hasgarddetouro_app.objects.Matress;
 
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ArrayList<Mattress> mattresses = new ArrayList<>();
+    private ArrayList<Matress> matresses = new ArrayList<Matress>();
     private ListView listView;
 
     @Override
@@ -24,23 +24,16 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         listView = findViewById(R.id.list_home);
 
-        mattresses.add(new Mattress("Name 01", "Overview 1", (float) 1200.00, "12x R$ 100,00"));
-        mattresses.add(new Mattress("Name 02", "Overview 2", (float) 2400.00, "12x R$ 200,00"));
-        mattresses.add(new Mattress("Name 03", "Overview 3", (float) 3600.00, "12x R$ 300,00"));
-        mattresses.add(new Mattress("Name 04", "Overview 4", (float) 1600.00, "12x R$ 133,34"));
-        mattresses.add(new Mattress("Name 05", "Overview 5", (float) 1520.00, "12x R$ 126,67"));
+        matresses.add(new Matress("name", "brief overview", (float) 1200.00, "12x R$ 100"));
+        matresses.add(new Matress("name", "brief overview", (float) 2400.00, "12x R$ 200"));
+        matresses.add(new Matress("name", "brief overview", (float) 3600.00, "12x R$ 300"));
 
-        ListHomeAdapter listHomeAdapter = new ListHomeAdapter(HomeActivity.this, mattresses);
+        ListHomeAdapter listHomeAdapter = new ListHomeAdapter(HomeActivity.this, matresses);
         listView.setAdapter(listHomeAdapter);
     }
 
     public void goToAuth(View view) {
         Intent intent = new Intent(HomeActivity.this, AuthenticationActivity.class);
         startActivity(intent);
-        finish();
-    }
-
-    public void addToChart(View view) {
-
     }
 }

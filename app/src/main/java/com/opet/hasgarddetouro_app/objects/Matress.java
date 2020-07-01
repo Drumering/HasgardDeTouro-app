@@ -1,13 +1,12 @@
 package com.opet.hasgarddetouro_app.objects;
 
-public class Mattress {
-
+public class Matress {
     private String name;
     private String description;
     private Float cashPrice;
     private String conditions;
 
-    public Mattress(String name, String description, Float cashPrice, String conditions) {
+    public Matress(String name, String description, Float cashPrice, String conditions) {
         this.name = name;
         this.description = description;
         this.cashPrice = cashPrice;
