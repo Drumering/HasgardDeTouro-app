@@ -56,7 +56,6 @@ public class HomeActivity extends AppCompatActivity implements ListView.OnItemCl
 
     private void initAdapter(ArrayList<Matress> matresses) {
         ListHomeAdapter listHomeAdapter = new ListHomeAdapter(HomeActivity.this, matresses);
-//        ArrayAdapter<Matress> test = new ArrayAdapter<>(getApplicationContext(), listHomeAdapter, matresses);
         listView.setAdapter( listHomeAdapter);
         listView.setOnItemClickListener(this);
     }
