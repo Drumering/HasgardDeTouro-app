@@ -90,7 +90,7 @@ public class HomeActivity extends AppCompatActivity implements ListView.OnItemCl
         Matress matress = (Matress) parent.getItemAtPosition(position);
         Intent intent = new Intent(HomeActivity.this, DetailMattressActivity.class);
 
-        intent.putExtra("ID", matress.getName());
+        intent.putExtra("obj", matress);
         startActivity(intent);
     }
 }
