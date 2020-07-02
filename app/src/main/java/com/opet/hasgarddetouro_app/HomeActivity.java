@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,14 +20,16 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.opet.hasgarddetouro_app.activities.AuthenticationActivity;
+import com.opet.hasgarddetouro_app.activities.DetailMattressActivity;
 import com.opet.hasgarddetouro_app.adapters.ListHomeAdapter;
 import com.opet.hasgarddetouro_app.objects.Matress;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.NavigableMap;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ListView.OnItemClickListener {
 
     private static final String TAG = HomeActivity.class.getSimpleName();
     private ArrayList<Matress> matresses = new ArrayList<Matress>();
@@ -50,9 +54,10 @@ public class HomeActivity extends AppCompatActivity {
         loadMatresses();
     }
 
-    private void initAdapter() {
+    private void initAdapter(ArrayList<Matress> matresses) {
         ListHomeAdapter listHomeAdapter = new ListHomeAdapter(HomeActivity.this, matresses);
-        listView.setAdapter(listHomeAdapter);
+        listView.setAdapter( listHomeAdapter);
+        listView.setOnItemClickListener(this);
     }
 
     private void loadMatresses() {
@@ -68,14 +73,24 @@ public class HomeActivity extends AppCompatActivity {
                             for (Matress m : matresses){
                                 Log.d(TAG, m.getName() + " " + m.getImages());
                             }
-                            initAdapter();
+                            initAdapter(matresses);
                         }
                     }
                 });
+        matresses.clear();
     }
 
     public void goToAuth(View view) {
         Intent intent = new Intent(HomeActivity.this, AuthenticationActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Matress matress = (Matress) parent.getItemAtPosition(position);
+        Intent intent = new Intent(HomeActivity.this, DetailMattressActivity.class);
+
+        intent.putExtra("ID", matress.getName());
         startActivity(intent);
     }
 }

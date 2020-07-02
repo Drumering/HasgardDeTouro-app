@@ -33,7 +33,7 @@ public class ListHomeAdapter extends ArrayAdapter<Matress> {
     TextView cond_matress;
 
     public ListHomeAdapter(@NonNull Context context, ArrayList<Matress> matresses) {
-        super(context, R.layout.list_home);
+        super(context, R.layout.list_home, matresses);
         this.mContext = context;
         this.matresses = matresses;
     }
