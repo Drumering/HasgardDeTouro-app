@@ -6,4 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".activities.DetailMattressActivity">
 
+    <ImageView
+        android:id="@+id/mattressImage"
+        android:layout_width="243dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_bed_splash_foreground" />
+
+    <TextView
+        android:id="@+id/textConditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lorem_condition"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mattressImage" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="235dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lorem_item_dec"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textConditions"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <Button
+        android:id="@+id/btnComprar"
+        android:layout_width="122dp"
+        android:layout_height="120dp"
+        android:background="@mipmap/ic_market_icon_foreground"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        app:layout_constraintVertical_bias="0.275" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
