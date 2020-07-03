@@ -19,9 +19,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@mipmap/ic_plus_flat_icon_foreground"
+        android:layout_width="67dp"
+        android:layout_height="66dp"
+        android:background="@mipmap/ic_user_icon_foreground"
         android:onClick="goToAuth"
         android:scaleX="2"
         android:scaleY="2"
